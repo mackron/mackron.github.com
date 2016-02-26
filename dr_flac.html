@@ -38,6 +38,14 @@
 
     do_something_with_decoded_samples(pFlac, numberOfSamplesActuallyDecoded, pDecodedInterleavedSamples);
         </code></pre>
+    <p>
+    <code>drflac_open_file()</code> is a high level helper API. You can also use <code>drflac_open()</code> which is a lower level API which takes a pointer to two callbacks - one for reading data
+    and another for seeking. Take a look at the implementation of <code>drflac_open_file()</code> for an example on how to implement these. You can also use <code>drflac_open_memory()</code> which
+    opens the decoder from a block of memory.
+    </p>
+    <p>
+    Decoded samples are always returned as interleaved signed 32-bit PCM, regardless of the encoded bits per sample.
+    </p>
     </p>
     <p><b>A few notes</b>
         <ul>
