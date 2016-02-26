@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dr_flac - An open source, public domain FLAC decoder for C and C++.</title>
+    <meta name="description" content="dr_flac is an open source (public domain) library for decoding FLAC files for C and C++.">
+
+    <style>
+        *{
+            font-family:sans-serif;
+            font-size:12pt;
+        }
+
+        code {
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <b>dr_flac</b>
+    <p>dr_flac is a simple single-file library written in C for decoding FLAC files. It's open source and public domain.</p>
+    <p>You can download it here: <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_flac.h">dr_flac.h</a></p>
+    <p>dr_flac is <a href="https://github.com/mackron/dr_libs">hosted on github</a>. You submit issues and feature requests from there.
+    <p>How to use:
+        <pre><code>
+    #define DR_FLAC_IMPLEMENTATION
+    #include "dr_flac.h"
+
+    ...
+
+    drflac* pFlac = drflac_open_file("my_song.flac");
+    if (pFlac == NULL) {
+        ... handle error ...
+    }
+
+    int32_t* pDecodedInterleavedSamples = malloc(pFlac->totalSampleCount * sizeof(int32_t));
+    uint64_t numberOfSamplesActuallyDecoded = drflac_read_s32(pFlac, pFlac->totalSampleCount, pDecodedInterleavedSamples);
+
+    do_something_with_decoded_samples(pFlac, numberOfSamplesActuallyDecoded, pDecodedInterleavedSamples);
+        </code></pre>
+    </p>
+    <p>A few notes:
+        <ul>
+            <li>The 32-bit build is about 1.1x to 1.25x slower than the reference implementation, but the 64-bit build is at about parity.</li>
+            <li>dr_flac is good for decoding native FLAC files, but it doesn't currently support streams without a STREAMINFO header or streams that start in the middle of a frame. I'm planning
+            on adding this at some point, but if you need this let me know and I'll prioritize it.
+            </li>
+            <li>Ogg encapsulation is not supported, but again if you need this let me know.</li>
+        </ul>
+    </p>
+
+    <p>
+    </p>
+
+    <br/>
+    <p>
+    If you have any questions you can fire me an email at mackron@gmail.com or tweet me @mackron.<br/>
+    <br/>
+    You can find my other projects here: <a href="https://mackron.github.com">mackron.github.com</a>
+    </p>
+
+    <!-- Call me curious... -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-6851467-5', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>
