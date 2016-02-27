@@ -34,7 +34,7 @@
     }
 
     float* pDecodedInterleavedSamples = malloc(pFlac->totalSampleCount * sizeof(float));
-    size_t numberOfSamplesActuallyDecoded = drflac_read_f32(pWav, (size_t)pWav->totalSampleCount, pDecodedInterleavedSamples);
+    size_t numberOfSamplesActuallyDecoded = drwav_read_f32(pWav, (size_t)pWav->totalSampleCount, pDecodedInterleavedSamples);
 
     do_something_with_decoded_samples(pWav, numberOfSamplesActuallyDecoded, pDecodedInterleavedSamples);
         </code></pre>
@@ -56,7 +56,7 @@
                 <li>IEEE 64-bit floating point.</li>
                 <li>A-law and u-law</li>
             </ul></li>
-            <li>Use <code>drwav_read()</code> to read samples in their internal format.</li>
+            <li>Use <code>drwav_read()</code> to return samples in their internal format.</li>
         </ul>
     </p>
 
