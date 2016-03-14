@@ -33,7 +33,7 @@
         ... handle error ...
     }
 
-    float* pDecodedInterleavedSamples = malloc(pFlac->totalSampleCount * sizeof(float));
+    float* pDecodedInterleavedSamples = malloc(pWav->totalSampleCount * sizeof(float));
     size_t numberOfSamplesActuallyDecoded = drwav_read_f32(pWav, (size_t)pWav->totalSampleCount, pDecodedInterleavedSamples);
 
     do_something_with_decoded_samples(pWav, numberOfSamplesActuallyDecoded, pDecodedInterleavedSamples);
