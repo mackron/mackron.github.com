@@ -22,8 +22,8 @@
         <li><a href="https://github.com/mackron/dr_libs">dr_libs</a>: a collection of public domain single-file libraries with minimal dependencies.
             <ul>
                 <li><a href="https://mackron.github.io/dr_flac">dr_flac</a>: a library for decoding FLAC files.</li>
-                <li><a href="https://mackron.github.io/dr_wav">dr_wav</a>: a library for reading audio data from .wav files.</li>
-                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_pcx.h">dr_pcx.h</a>: a library for loading PCX files.</li>
+                <li><a href="https://mackron.github.io/dr_wav">dr_wav</a>: a library for reading audio data from WAV files.</li>
+                <li><a href="https://mackron.github.io/dr_pcx">dr_pcx</a>: a library for loading PCX files.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fs.h">dr_fs.h</a>: a library for loading files from both the native file system and archives such as Zip files, with pluggable back-ends.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fsw.h">dr_fsw.h</a>: a library for watching for changes to the file system. Windows only at the moment.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_path.h">dr_path.h</a>: a path manipulation library which never uses the heap.</li>
@@ -62,9 +62,12 @@
         <li><a href="https://mackron.itch.io/paddler">Paddler</a>: it's just Pong. Made in GTGameEngine.</li>
     </ul>
     <br />
-    <b>My utilities</b>
+    <b>My programs</b>
     <p>These are just simple utility programs I've built which I've found useful for doing very specific things.</p>
     <ul>
+        <li><a href="dr_progs/dr_pcx_viewer.exe">dr_pcx_viewer.exe</a>:
+            A simple program for displaying PCX images. Built as a test <a href="https://mackron.github.io/dr_pcx">dr_pcx</a>.
+        </li>
         <li><a href="dr_utils/dr_file2chex.exe">dr_file2chex.exe</a>:
             A simple console application which takes a file and converts it's raw data to an unsigned char[] array. I use this to inline small resource files so I can simplify
             the distribution of whatever it is I'm working on. Output is printed to stdout. Use -n MyVariableName to control the name of the array.</a>
