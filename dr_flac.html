@@ -10,10 +10,6 @@
             font-family:sans-serif;
             font-size:12pt;
         }
-
-        code {
-            font-family: monospace;
-        }
     </style>
 </head>
 
@@ -21,47 +17,29 @@
     <b>dr_flac</b>
     <p>dr_flac is a simple single-file library written in C for decoding FLAC files. It's open source and public domain.</p>
     <p>You can download it here: <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_flac.h">dr_flac.h</a></p>
-    <p>dr_flac is <a href="https://github.com/mackron/dr_libs">hosted on github</a>. You can submit issues and feature requests from there.
-    <p><b>How to use</b>
-        <pre><code>
-    #define DR_FLAC_IMPLEMENTATION
-    #include "dr_flac.h"
-
-    ...
-
-    drflac* pFlac = drflac_open_file("my_song.flac");
-    if (pFlac == NULL) {
-        ... handle error ...
-    }
-
-    int32_t* pDecodedInterleavedSamples = malloc(pFlac->totalSampleCount * sizeof(int32_t));
-    uint64_t numberOfSamplesActuallyDecoded = drflac_read_s32(pFlac, pFlac->totalSampleCount, pDecodedInterleavedSamples);
-
-    do_something_with_decoded_samples(pFlac, numberOfSamplesActuallyDecoded, pDecodedInterleavedSamples);
-        </code></pre>
-    <p>
-    <code>drflac_open_file()</code> is a high level helper API. You can also use <code>drflac_open()</code> which is a lower level API which takes a pointer to two callbacks - one for reading data
-    and another for seeking. Take a look at the implementation of <code>drflac_open_file()</code> for an example on how to implement these. You can also use <code>drflac_open_memory()</code> which
-    opens the decoder from a block of memory.
-    </p>
-    <p>
-    Decoded samples are always returned as interleaved signed 32-bit PCM, regardless of the encoded bits per sample.
-    </p>
-    </p>
-    <p><b>A few notes</b>
+    <p>dr_flac is <a href="https://github.com/mackron/dr_libs">hosted on github</a>. You can submit issues and feature requests from there.</p>
+    <p>Refer to <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_flac.h">dr_flac.h</a> for usage and API documentation.</p>
+    <p><b>Features</b>
         <ul>
-            <li>The 32-bit build is about 1.1x to 1.25x slower than the reference implementation, but the 64-bit build is at about parity.</li>
-            <li>dr_flac is good for decoding native FLAC files, but it doesn't currently support streams without a STREAMINFO header or streams that start in the middle of a frame. I'm planning
-            on adding this at some point, but if you need this let me know and I'll prioritize it.
-            </li>
-            <li>Ogg encapsulation is not supported, but again if you need this let me know.</li>
+            <li>Public domain</lib>
+            <li>No dependencies except for the C standard library</li>
+            <li>Everything is contained in a single file</li>
+            <li>Performance roughly comparable to the reference implementation</li>
+            <li>Supports metadata</li>
         </ul>
     </p>
-
-
+    <br/>
+    <p><b>Limitations and future plans</b>
+        <ul>
+            <li>Ogg encapsulation is not currently supported, but planned for the future.</li>
+            <li>dr_flac does not properly handle corrupt or perverse FLAC streams. This will be addressed in the future.</li>
+            <li>The FLAC stream must begin with the header and STREAMINFO block. This is not a problem for regular FLAC files,
+            but is something to consider for network based streams or whatnot.</li>
+        </ul>
+    </p>
     <br/>
     <p><b>How to contact me</b><br/>
-    If you have any questions, suggestions or whatever you can fire me an email at mackron@gmail.com or tweet me <a href="https://twitter.com/mackron">@mackron</a>.<br/>
+    If you have any questions, suggestions or anything you can fire me an email at mackron@gmail.com or tweet me <a href="https://twitter.com/mackron">@mackron</a>.<br/>
     <br/>
     You can find my other projects here: <a href="https://mackron.github.io">https://mackron.github.io</a>
     </p>

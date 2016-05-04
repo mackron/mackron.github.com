@@ -10,10 +10,6 @@
             font-family:sans-serif;
             font-size:12pt;
         }
-
-        code {
-            font-family: monospace;
-        }
     </style>
 </head>
 
@@ -22,30 +18,12 @@
     <p>dr_wav is a simple single-file library written in C for loading WAV files. It's open source and public domain.</p>
     <p>You can download it here: <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_wav.h">dr_wav.h</a></p>
     <p>dr_wav is <a href="https://github.com/mackron/dr_libs">hosted on github</a>. You can submit issues and feature requests from there.
-    <p><b>How to use</b>
-        <pre><code>
-    #define DR_WAV_IMPLEMENTATION
-    #include "dr_wav.h"
-
-    ...
-
-    drwav* pWav = drwav_open_file("my_song.wav");
-    if (pWav == NULL) {
-        ... handle error ...
-    }
-
-    float* pDecodedInterleavedSamples = malloc(pWav->totalSampleCount * sizeof(float));
-    size_t numberOfSamplesActuallyDecoded = drwav_read_f32(pWav, (size_t)pWav->totalSampleCount, pDecodedInterleavedSamples);
-
-    do_something_with_decoded_samples(pWav, numberOfSamplesActuallyDecoded, pDecodedInterleavedSamples);
-        </code></pre>
-    <p>
-    <code>drwav_open_file()</code> is a high level helper API. You can also use <code>drwav_open()</code> which is a lower level API which takes a pointer to two callbacks - one for reading data
-    and another for seeking. Take a look at the implementation of <code>drwav_open_file()</code> for an example on how to implement these. You can also use <code>drwav_open_memory()</code> which
-    opens the loader from a block of memory.
-    </p>
-    <p><b>A few notes</b>
+    <p>Refer to <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_wav.h">dr_wav.h</a> for usage and API documentation.</p>
+    <p><b>Features</b>
         <ul>
+            <li>Public domain</lib>
+            <li>No dependencies except for the C standard library</li>
+            <li>Everything is contained in a single file</li>
             <li>Tested and supported internal formats include the following:<ul>
                 <li>Unsigned 8-bit PCM</li>
                 <li>Signed 12-bit PCM</li>
@@ -56,10 +34,15 @@
                 <li>IEEE 64-bit floating point.</li>
                 <li>A-law and u-law</li>
             </ul></li>
-            <li>Use <code>drwav_read()</code> to return samples in their internal format.</li>
         </ul>
     </p>
-
+    <br/>
+    <p><b>Limitations and future plans</b>
+        <ul>
+            <li>Wave64 (w64) is not currently supported, but will be added in the future. It will work seamlessly with the existing API.</li>
+            <li>Microsoft ADPCM is not supported and will likely not be added in the near future unless somebody really needs it.</li>
+        </ul>
+    </p>
 
     <br/>
     <p><b>How to contact me</b><br/>
