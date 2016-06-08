@@ -4,43 +4,144 @@
     <title>dr_flac - An open source, public domain FLAC decoder for C and C++.</title>
     <meta name="description" content="dr_flac is an open source (public domain) library for decoding FLAC files for C and C++.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link rel="icon" href="img/favicon.png">
+    
     <style>
-        *{
+        body{
             font-family:sans-serif;
             font-size:12pt;
+            line-height:18pt;
+            margin:0;
+            padding:0;
+            background-color:#eee
+        }
+        
+        a {
+            text-decoration:none;
+            color:#28f;
+        }
+        a:hover {
+            text-decoration:underline;
+            color:#26d;
+        }
+        
+        .a-download {
+            text-decoration:none;
+            color:#333;
+            border:solid 1px #000;
+            border-radius:2px;
+            padding:16px 32px;
+        }
+        .a-download:hover {
+            background-color:#ddeaee;
+            text-decoration:none;
+            color:#333;
+        }
+        
+        .a-sublink {
+            font-size:11pt;
+        }
+        
+        #preview {
+            font-family:monospace;
+            font-size:10pt;
+            text-align:left;
+        }
+        
+        .footer-links {
+            margin:        0px;
+            margin-bottom: 10px;
+            padding: 0px;
+        }
+        .footer-links li {
+            display: inline;
+            padding: 0 2px;
+        }
+        .footer-links li:first-child {
+            padding-left: 0;
         }
     </style>
 </head>
 
 <body>
-    <b>dr_flac</b>
-    <p>dr_flac is a simple single-file library written in C for decoding FLAC files. It's open source and public domain.</p>
-    <p>You can download it here: <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_flac.h">dr_flac.h</a></p>
-    <p>dr_flac is <a href="https://github.com/mackron/dr_libs">hosted on github</a>. You can submit issues and feature requests from there.</p>
-    <p>Refer to <a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_flac.h">dr_flac.h</a> for usage and API documentation.</p>
-    <p><b>Features</b>
-        <ul>
-            <li>Public domain</lib>
-            <li>No dependencies except for the C standard library</li>
-            <li>Everything is contained in a single file</li>
-            <li>Performance roughly comparable to the reference implementation</li>
-            <li>Supports metadata</li>
+    <div style="border-bottom:solid 1px #333; text-align:center; padding:64px; background-color:#eee;">
+        <div><img src="img/dr_flac_logo1_large.png" style="width:auto; height:auto; min-height:70px;"></div>
+        <div style="padding:16px; color:#333; font-size:14pt;">An open source FLAC decoder.</div>
+        <div style="margin-top:32px;">
+            <a class="a-download" href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_flac.h">Download dr_flac.h</a>
+        </div>
+    </div>
+    
+    <div style="background-color:#fff; padding:2em 0em;">
+    <div style="margin:0 auto; width:800px; text-align:center;">
+        <div>
+        dr_flac is an open source library for decoding FLAC files. It's written in C in a single file with
+        no dependencies except for the C standard library, and is released into the public domain.
+        </div>
+    </div>
+    
+    <table style="margin:0 auto; border-collapse:collapse; width:90%; margin-top:2em;">
+        <tr>
+            <td style="width:50%; vertical-align:top; padding-right:4em;">
+                <div style="font-size:14pt;">Features</div>
+                <ul>
+                    <li>Public domain.</li>
+                    <li>Single file.</li>
+                    <li>No dependencies except for the C standard library.</li>
+                    <li>Sample exact reading and seeking.</li>
+                    <li>Seamless Ogg encapsulation with support for multiplexed streams.</li>
+                    <li>Supports metadata.</li>
+                    <li>Better performance than the reference implementation on 64-bit builds, and at parity on 32-bit builds.</li>
+                    <li>Decode from any data source including files, a block of memory or from callbacks.</li>
+                    <li>A consistent API with <a href="https://mackron.github.io/dr_wav">dr_wav</a>.</li>
+                </ul>
+                <div style="font-size:14pt; margin-top:2em;">Limitations and Future Plans</div>
+                <ul>
+                    <li>dr_flac does not do any CRC checks, but support for this is coming very soon.</li>
+                    <li>dr_flac does not properly handle corrupt or perverse FLAC streams.</li>
+                    <li>dr_flac does not work with broadcast stream like internet radio and whatnot.</li>
+                </ul>
+            </td>
+            <td style="width:50%; vertical-align:top;">
+            <div style="font-size:14pt;">Examples</div>
+            <div style="font-size:10pt; line-height:1.2em; margin-top:1em; margin-bottom:0.2em;">
+                Example 1: Decoding from a file.
+            </div>
+            <div id="preview">
+            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.6em .6em"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_FLAC_IMPLEMENTATION</span>
+<span style="color: #BC7A00">#include &quot;dr_flac.h&quot;</span>
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
+{
+    drflac<span style="color: #666666">*</span> pFlac <span style="color: #666666">=</span> drflac_open_file(<span style="color: #BA2121">&quot;my_song.flac&quot;</span>);
+    <span style="color: #008000; font-weight: bold">if</span> (pFlac <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
+    }
+
+    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)pFlac<span style="color: #666666">-&gt;</span>totalSampleCount <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
+    drflac_read_s32(pFlac, pFlac<span style="color: #666666">-&gt;</span>totalSampleCount, pSampleData);
+
+    <span style="color: #408080; font-style: italic">// At this point pSampleData contains every decoded sample as signed 32-bit PCM.</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
+}
+</pre></div>
+
+
+    </div>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <div style="color:#999; font-size:11pt; background-color:#eee; border-top:solid 1px #000; padding:16px 0px; text-align:center;">
+        <ul class="footer-links">
+            <li><a href="https://github.com/mackron/dr_libs/blob/master/dr_flac.h">GitHub Project</a></li>
+            <li>&middot;</li>
+            <li><a href="https://github.com/mackron/dr_libs/issues?state=open">Issues</a></li>
         </ul>
-    </p>
-    <br/>
-    <p><b>Limitations and future plans</b>
-        <ul>
-            <li>dr_flac does not properly handle corrupt or perverse FLAC streams. This will be addressed in the future.</li>
-            <li>dr_flac does not work with broadcast stream like internet radio and whatnot. Adding support for this is planned for the future.</li>
-        </ul>
-    </p>
-    <br/>
-    <p><b>How to contact me</b><br/>
-    If you have any questions, suggestions or anything you can fire me an email at mackron@gmail.com or tweet me <a href="https://twitter.com/mackron">@mackron</a>.<br/>
-    <br/>
-    You can find my other projects here: <a href="https://mackron.github.io">https://mackron.github.io</a>
-    </p>
+        Developed by David Reid - <a href="mailto:mackron@gmail.com">mackron@gmail.com</a>
+    </div>
 
     <!-- Call me curious... -->
     <script>
