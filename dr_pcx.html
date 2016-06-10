@@ -120,7 +120,7 @@
 {
     <span style="color: #B00040">int</span> width;
     <span style="color: #B00040">int</span> height;
-    <span style="color: #B00040">int</span> components
+    <span style="color: #B00040">int</span> components;
     <span style="color: #B00040">uint8_t</span><span style="color: #666666">*</span> pImageData <span style="color: #666666">=</span> drpcx_load_file(<span style="color: #BA2121">&quot;my_image.pcx&quot;</span>, <span style="color: #008000">false</span>, <span style="color: #666666">&amp;</span>width, <span style="color: #666666">&amp;</span>height, <span style="color: #666666">&amp;</span>components);
     <span style="color: #008000; font-weight: bold">if</span> (pImageData <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
