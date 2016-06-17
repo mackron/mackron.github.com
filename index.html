@@ -27,7 +27,7 @@
                 <li><a href="https://mackron.github.io/dr_pcx">dr_pcx</a>: a library for loading PCX files.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fs.h">dr_fs.h</a>: a library for loading files from both the native file system and archives such as Zip files, with pluggable back-ends.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fsw.h">dr_fsw.h</a>: a library for watching for changes to the file system. Windows only at the moment.</li>
-                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_path.h">dr_path.h</a>: a path manipulation library which never uses the heap.</li>
+                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_path.h">dr_path.h</a>: a file path manipulation library which never uses the heap.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_gui.h">dr_gui.h</a>: a low-level GUI library.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_gl.h">dr_gl.h</a>: a simple helper library for working with OpenGL.</li>
                 <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_vulkan.h">dr_vulkan.h</a>: a simple helper library for working with Vulkan.</li>
@@ -43,14 +43,12 @@
             <ul>
                 <li>Super simple build system. The entire engine is compiled as a single source file which can be added to your project just like any other.</li>
                 <li>There are no external dependencies except for a few ubiquitous system libraries like pthreads and whatnot.</li>
-                <li>Ultra light-weight with a goal to have executables for simple games (statically linked and including editing tools) to be less than 1MB.
+                <li>Ultra lightweight with a goal to have executables for simple games (statically linked) to be less than 1MB.
                 <li>A simple, clean, no bullshit API.</li>
                 <li>Public domain.</li>
                 <li>Entirely written in C (no C++).</li>
             </ul>
         </li>
-        <br/>
-        <li><a href="https://github.com/mackron/dr_appkit">dr_appkit</a>: a toolkit for developing desktop applications on Windows and Linux. Used by dr_ge for it's editing tools.
         </li>
         <br/>
         <li><a href="https://github.com/mackron/GTGameEngine">GTGameEngine</a>:
