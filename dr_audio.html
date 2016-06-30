@@ -128,7 +128,7 @@
 
 <span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
 {
-    dra_device<span style="color: #666666">*</span> pDevice <span style="color: #666666">=</span> dra_device_open(<span style="color: #008000">NULL</span>, dra_device_playback);
+    dra_device<span style="color: #666666">*</span> pDevice <span style="color: #666666">=</span> dra_device_open(<span style="color: #008000">NULL</span>, dra_device_type_playback);
     <span style="color: #008000; font-weight: bold">if</span> (pDevice <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
