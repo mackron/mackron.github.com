@@ -10,12 +10,100 @@
             font-family:sans-serif;
             font-size:12pt;
         }
+        
+        h1 {
+            font-size:20pt;
+        }
+        
+        .header-link {
+            text-decoration:none;
+            color:cornflowerblue;
+            font-weight:bold;
+            font-size:22px;
+        }
     </style>
 </head>
 
-<body>
-    <p>The home page of David Reid - a nobody programmer.</p>
+<body style="padding:0; margin:0;">
+    <div style="height:4em; text-align:center;padding:1em; border-bottom:solid 1px #333; background-color:#eee;">
+        <div style="margin-bottom:1em; font-weight:bold; font-family:monospace; font-size:20px;">David Reid</div>
+        A nobody programmer, but still better than you.
+    </div>
+    
+    <div style="border-bottom:solid 1px #999;">
+        <table style="margin:0 auto; border-collapse:collapse; width:75%; margin-top:6em; margin-bottom:6em; font-size:11pt; text-align:center;">
+            <tr>
+                <td style="width:33%; vertical-align:top; padding:0 2em;">
+                    <a href="http://dred.io"><img src="img/logo2_512x512.png" style="width:192px; height:192px;"></a><br/>
+                    <h2>dred</h2>
+                    <div style="margin-top:1em;">
+                        An ultra lightweight text editor with a focus on size, speed and simplicity.
+                    </div>
+                </td>
 
+                <td style="width:34%; vertical-align:top; padding:0 2em;">
+                    <a href="http://mackron.github.io/GTGameEngine/"><img src="img/gtge_logo1.png"></a><br/>
+                    <h2>GTGameEngine</h2>
+                    <div style="margin-top:1em;">
+                        An open source game engine written in C++.
+                    </div>
+                </td>
+
+                <td style="width:33%; vertical-align:top; padding:0 2em;">
+                    <a href="./dr_libs/index.html"><img src="img/drlibs_logo1.png" style="width:192px; height:192px;"></a><br/>
+                    <h2>dr_libs</h2>
+                    <div style="margin-top:1em;">
+                        A collection of single-file public domain libraries for C and C++.
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="border-bottom:solid 1px #999; padding-bottom:3em;">
+        <div style="font-family:monospace; font-size:48px; padding-top:1em; text-align:center;">
+            Libraries
+        </div>
+    </div>
+    
+    <div>
+        <div style="font-family:monospace; font-size:48px; padding-top:1em; text-align:center;">
+            Games
+        </div>
+        
+        <div style="margin:0 auto; text-align:center; width:75%; padding:3em;">
+            <a class="header-link" href="https://teamrnr.itch.io/desert-sprint">Desert Sprint</a>
+            <div>
+                <p>
+                    A simple top-down racing game made in Unity. Art by <a href="http://www.jairobinson.com">http://www.jairobinson.com</a>.
+                </p>
+            </div>
+            <table style="margin:0 auto;">
+                <tr>
+                    <td><img src="img/games/ds1.png" style="height:256px;" /></td>
+                    <td><img src="img/games/ds2.png" style="height:256px;" /></td>
+                    <td><img src="img/games/ds3.png" style="height:256px;" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin:0 auto; text-align:center; width:75%; padding:3em; border-top:solid 1px #999;">
+            <a class="header-link" href="https://mackron.itch.io/paddler">Paddler</a>
+            <div>
+                <p>
+                    It's just Pong. Made in GTGameEngine.
+                </p>
+            </div>
+            <table style="margin:0 auto;">
+                <tr>
+                    <td><img src="img/games/paddler1.png" style="height:256px;" /></td>
+                    <td><img src="img/games/paddler2.png" style="height:256px;" /></td>
+                    <td><img src="img/games/paddler3.png" style="height:256px;" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
     <b>My projects</b>
     <p>All of my open source projects are on <a href="https://github.com/mackron">github</a> and are all public domain.</p>
     <ul>
