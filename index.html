@@ -15,11 +15,37 @@
             font-size:20pt;
         }
         
+        a {
+            text-decoration:none;
+            color:#28f;
+        }
+        a:hover {
+            text-decoration:underline;
+            color:#26d;
+        }
+        
         .header-link {
             text-decoration:none;
             color:cornflowerblue;
             font-weight:bold;
             font-size:22px;
+        }
+        .header-link-2 {
+            text-decoration:none;
+            color:#000000;
+        }
+        
+        .footer-links {
+            margin:        0px;
+            margin-bottom: 10px;
+            padding: 0px;
+        }
+        .footer-links li {
+            display: inline;
+            padding: 0 2px;
+        }
+        .footer-links li:first-child {
+            padding-left: 0;
         }
     </style>
 </head>
@@ -64,6 +90,50 @@
         <div style="font-family:monospace; font-size:48px; padding-top:1em; text-align:center;">
             Libraries
         </div>
+        
+        <table style="width:75%; margin:0 auto; text-align:center; vertical-align:top;">
+            <tr>
+                <td style="width:33%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="dr_flac.html">dr_flac</a></h2>
+                    dr_flac is an open source library for decoding FLAC files. It's written in C in a single file with no dependencies except for the C standard library, and is released into the public domain.
+                </td>
+                
+                <td style="width:34%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="dr_wav.html">dr_wav</a></h2>
+                    dr_wav is an open source library for decoding WAV files. It's written in C in a single file with no dependencies except for the C standard library, and is released into the public domain.
+                </td>
+                
+                <td style="width:33%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="dr_audio.html">dr_audio</a></h2>
+                    dr_audio is an open source library for audio playback and mixing, released into the public domain. It's written in C in a single file with no dependencies except for the relevant back-ends (DirectSound, ALSA, etc.)
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width:33%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="dr_pcx.html">dr_pcx</a></h2>
+                    dr_pcx is an open source library for decoding PCX image files. It's written in C in a single file with no dependencies except for the C standard library, and is released into the public domain.
+                </td>
+                
+                <td style="width:34%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_obj.h">dr_obj</a></h2>
+                    dr_obj is an open source library for loading Wavefront OBJ model files. It's written in C in a single file with no dependencies except for the C standard library. Public domain.
+                </td>
+                
+                <td style="width:33%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fs.h">dr_fs</a></h2>
+                    dr_fs is a simple library which abstracts file IO to allow one to open files from both the native file system and archive/package files such as Zip files using a common API.
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width:33%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fsw.h">dr_fsw</a></h2>
+                    dr_fsw is a simple library for watching for changes to the file system. C/C++, single file, public domain. Windows only at the moment.
+                </td>
+                
+                <td style="width:34%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="https://github.com/dr-soft/dr_ipc">dr_ipc</a></h2>
+                    dr_ipc is a very simple library for handling interprocess communication. It's focused on simplicity over flexibility. Currently it only supports blocking pipes (both named and anonymous), but sockets are coming soon.
+                </td>
+                
+                <td style="width:33%; padding:2em; vertical-align:top;"><h2><a class="header-link-2" href="https://github.com/dr-soft/dr_webgen">dr_webgen</a></h2>
+                    dr_webgen is a simple library for static website generation. It is not intended to replace more complete solutions like Jekyll, Hugo, etc. but is instead focused on simplicity.
+                </td>
+            </tr>
+        </table>
     </div>
     
     <div>
@@ -104,53 +174,34 @@
         </div>
     </div>
     
-    <b>My projects</b>
-    <p>All of my open source projects are on <a href="https://github.com/mackron">github</a> and are all public domain.</p>
-    <ul>
-        <li><a href="./dr_libs/index.html">dr_libs</a>: a collection of public domain single-file libraries with minimal dependencies.
-            <ul>
-                <li><a href="https://mackron.github.io/dr_flac">dr_flac</a>: a library for decoding FLAC files.</li>
-                <li><a href="https://mackron.github.io/dr_wav">dr_wav</a>: a library for reading audio data from WAV files.</li>
-                <li><a href="https://mackron.github.io/dr_audio">dr_audio</a>: A simple library for audio playback, recording and mixing.</li>
-                <li><a href="https://mackron.github.io/dr_pcx">dr_pcx</a>: a library for loading PCX files.</li>
-                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fs.h">dr_fs.h</a>: a library for loading files from both the native file system and archives such as Zip files, with pluggable back-ends.</li>
-                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_fsw.h">dr_fsw.h</a>: a library for watching for changes to the file system. Windows only at the moment.</li>
-                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr_math.h">dr_math.h</a>: a simple vector math library. Only updated as I need it.</li>
-                <li><a href="https://raw.githubusercontent.com/mackron/dr_libs/master/dr.h">dr.h</a>: miscellaneous snippets that don't really fit in any particular category.</li>
-            </ul>
-        </li>
-        <br/>
-        <li><a href="https://github.com/mackron/dr_ge">dr_ge</a>: (very WIP) a simple "game engine" written in C, mostly from scratch, with a focus on simplicity and ultra light-weightness. Things that make it different:
-            <ul>
-                <li>Super simple build system. The entire engine is compiled as a single source file which can be added to your project just like any other.</li>
-                <li>There are no external dependencies except for a few ubiquitous system libraries like pthreads and whatnot.</li>
-                <li>Ultra lightweight with a goal to have executables for simple games (statically linked) to be less than 1MB.
-                <li>A simple, clean, no bullshit API.</li>
-                <li>Public domain.</li>
-                <li>Entirely written in C (no C++).</li>
-            </ul>
-        </li>
-        </li>
-        <br/>
-        <li><a href="https://github.com/mackron/GTGameEngine">GTGameEngine</a>:
-            a mostly discontinued attempt at a game engine which suffers from not-doing-anything-particularly-different-or-better-itus. See dr_ge which is a similar project with some
-            features that make it quite a bit different from other alternatives. I'm keeping this project around just until I migrate all of the important stuff over to dr_ge.
-        </li>
-    </ul>
-    <br />
-    <b>My games</b>
-    <ul>
-        <li><a href="https://teamrnr.itch.io/desert-sprint">Desert Sprint</a>: a simple top-down racing game made in Unity. Art by <a href="http://www.jairobinson.com">http://www.jairobinson.com</a>.</li>
-        <li><a href="https://mackron.itch.io/paddler">Paddler</a>: it's just Pong. Made in GTGameEngine.</li>
-    </ul>
-    <br />
-    <b>My programs</b>
-    <p>These are just simple utility programs I've built which I've found useful for doing very specific things.</p>
-    <ul>
-        <li><a href="https://github.com/mackron/dr_progs/releases/download/v0.1-dr_pcx_viewer/dr_pcx_viewer.exe">dr_pcx_viewer.exe</a>:
-            A simple program for displaying PCX images. Built as a test for <a href="https://mackron.github.io/dr_pcx">dr_pcx</a>.
-        </li>
-    </ul>
+    <div style="color:#999; font-size:11pt; background-color:#eee; border-top:solid 1px #000; padding:16px 0px; text-align:center;">
+        <table style="width:50%; margin:0 auto; text-align:center;">
+            <tr>
+                <td style="width:33%; vertical-align:top;">
+                    David Reid<br/>
+                    <a href="mailto:mackron@gmail.com">mackron@gmail.com</a>
+                </td>
+                
+                <td style="width:34%; vertical-align:top;">
+                    <div style="">GitHub Repositories</div>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/mackron?tab=repositories">mackron</a></li>
+                        <li>&middot;</li>
+                        <li><a href="https://github.com/dr-soft?tab=repositories">dr-soft</a></li>
+                    </ul>
+                </td>
+                
+                <td style="width:33%; vertical-align:top;">
+                    <div style="">Game Downloads</div>
+                    <ul class="footer-links">
+                        <li><a href="https://mackron.itch.io/">mackron</a></li>
+                        <li>&middot;</li>
+                        <li><a href="https://teamrnr.itch.io/">Team RnR</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
 
     <!-- Call me curious... -->
     <script>
