@@ -120,7 +120,7 @@
                 decoded file.
             </div>
             <div id="preview">
-            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.6em .6em"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_FLAC_IMPLEMENTATION</span>
+            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_FLAC_IMPLEMENTATION</span>
 <span style="color: #BC7A00">#include &quot;dr_flac.h&quot;</span>
 
 <span style="color: #BC7A00">#define DR_AUDIO_IMPLEMENTATION</span>
@@ -128,13 +128,15 @@
 
 <span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
 {
-    dra_device<span style="color: #666666">*</span> pDevice <span style="color: #666666">=</span> dra_device_open(<span style="color: #008000">NULL</span>, dra_device_type_playback);
-    <span style="color: #008000; font-weight: bold">if</span> (pDevice <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
+    dra_device<span style="color: #666666">*</span> pDevice;
+    dra_result result <span style="color: #666666">=</span> dra_device_create(<span style="color: #008000">NULL</span>, dra_device_type_playback, <span style="color: #666666">&amp;</span>pDevice);
+    <span style="color: #008000; font-weight: bold">if</span> (result <span style="color: #666666">!=</span> DRA_RESULT_SUCCESS) {
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
 
-    dra_voice<span style="color: #666666">*</span> pVoice <span style="color: #666666">=</span> dra_voice_create_from_file(pDevice, <span style="color: #BA2121">&quot;my_song.flac&quot;</span>);
-    <span style="color: #008000; font-weight: bold">if</span> (pVoice <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
+    dra_voice<span style="color: #666666">*</span> pVoice;
+    result <span style="color: #666666">=</span> dra_voice_create_from_file(pDevice, <span style="color: #BA2121">&quot;my_song.flac&quot;</span>, <span style="color: #666666">&amp;</span>pVoice);
+    <span style="color: #008000; font-weight: bold">if</span> (result <span style="color: #666666">!=</span> DRA_RESULT_SUCCESS) {
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
 
@@ -144,10 +146,11 @@
     getchar();
 
     dra_voice_delete(pVoice);
-    dra_device_close(pDevice);
+    dra_device_delete(pDevice);
     <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
 }
 </pre></div>
+
 
     </div>
             </td>
