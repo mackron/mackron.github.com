@@ -90,7 +90,7 @@
                     <li>No dependencies except for the C standard library.</li>
                     <li>Sample exact reading and seeking.</li>
                     <li>Decode from any data source including files, a block of memory or from callbacks.</li>
-                    <li>Seamless conversion of common internal data formats to either signed 32-bit PCM or IEEE 32-bit floating point. Supported internal formats include:
+                    <li>Seamless conversion of common internal data formats to signed 32-bit PCM, signed 16-bit PCM or IEEE 32-bit floating point. Supported internal formats include:
                         <ul>
                             <li>Unsigned 8-bit PCM</li>
                             <li>Signed 12-bit PCM</li>
@@ -98,18 +98,14 @@
                             <li>Signed 24-bit PCM</li>
                             <li>Signed 32-bit PCM</li>
                             <li>IEEE 32-bit floating point</li>
-                            <li>IEEE 64-bit floating point.</li>
-                            <li>A-law and u-law</li>
+                            <li>IEEE 64-bit floating point</li>
+                            <li>A-law and &mu;-law</li>
 							<li>Microsoft ADPCM</li>
+							<li>IMA ADPCM (DVI, format code 0x11)</li>
                         </ul>
                     </li>
                     <li>Seamless support for Sony Wave64 (W64).</li>
                     <li>A consistent API with <a href="https://mackron.github.io/dr_flac">dr_flac</a>.</li>
-                </ul>
-                <div style="font-size:14pt; margin-top:2em;">Limitations and Future Plans</div>
-                <ul>
-                    <li>IMA-ADPCM is not currently supported.</li>
-                    <li>Support for common metadata blocks is not currently supported.</li>
                 </ul>
             </td>
             <td style="width:50%; vertical-align:top;">
