@@ -113,7 +113,7 @@
                 Example 1: Decoding from a file.
             </div>
             <div id="preview">
-            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.6em .6em"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_PCX_IMPLEMENTATION</span>
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_PCX_IMPLEMENTATION</span>
 <span style="color: #BC7A00">#include &quot;dr_pcx.h&quot;</span>
 
 <span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
@@ -121,7 +121,7 @@
     <span style="color: #B00040">int</span> width;
     <span style="color: #B00040">int</span> height;
     <span style="color: #B00040">int</span> components;
-    <span style="color: #B00040">uint8_t</span><span style="color: #666666">*</span> pImageData <span style="color: #666666">=</span> drpcx_load_file(<span style="color: #BA2121">&quot;my_image.pcx&quot;</span>, <span style="color: #008000">false</span>, <span style="color: #666666">&amp;</span>width, <span style="color: #666666">&amp;</span>height, <span style="color: #666666">&amp;</span>components);
+    <span style="color: #B00040">uint8_t</span><span style="color: #666666">*</span> pImageData <span style="color: #666666">=</span> drpcx_load_file(<span style="color: #BA2121">&quot;my_image.pcx&quot;</span>, <span style="color: #008000">false</span>, <span style="color: #666666">&amp;</span>width, <span style="color: #666666">&amp;</span>height, <span style="color: #666666">&amp;</span>components, <span style="color: #666666">0</span>);
     <span style="color: #008000; font-weight: bold">if</span> (pImageData <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
@@ -133,7 +133,6 @@
     <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
 }
 </pre></div>
-
 
     </div>
             </td>
