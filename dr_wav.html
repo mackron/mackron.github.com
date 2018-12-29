@@ -114,7 +114,7 @@
                 Example 1: Decoding from a file.
             </div>
             <div id="preview">
-            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.6em .6em"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_WAV_IMPLEMENTATION</span>
+            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_WAV_IMPLEMENTATION</span>
 <span style="color: #BC7A00">#include &quot;dr_wav.h&quot;</span>
 
 <span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
@@ -124,8 +124,8 @@
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
 
-    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)pWav<span style="color: #666666">-&gt;</span>totalSampleCount <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
-    drwav_read_s32(pWav, pWav<span style="color: #666666">-&gt;</span>totalSampleCount, pSampleData);
+    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)pWav<span style="color: #666666">-&gt;</span>totalPCMFrameCount <span style="color: #666666">*</span> pWav<span style="color: #666666">-&gt;</span>channels <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
+    drwav_read_s32(pWav, pWav<span style="color: #666666">-&gt;</span>totalPCMFrameCount, pSampleData);
 
     <span style="color: #408080; font-style: italic">// At this point pSampleData contains every decoded sample as signed 32-bit PCM.</span>
 

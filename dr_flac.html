@@ -92,7 +92,7 @@
                     <li>Seamless Ogg encapsulation with support for multiplexed streams.</li>
                     <li>Supports metadata.</li>
                     <li>Decode from any data source including files, a block of memory or from callbacks.</li>
-                    <li>A consistent API with <a href="https://mackron.github.io/dr_wav">dr_wav</a>.</li>
+                    <li>A consistent API with <a href="https://mackron.github.io/dr_wav">dr_wav</a> and <a href="https://github.com/mackron/dr_libs/blob/master/dr_mp3.h">dr_mp3</a>.</li>
                 </ul>
             </td>
             <td style="width:50%; vertical-align:top;">
@@ -101,7 +101,7 @@
                 Example 1: Decoding from a file.
             </div>
             <div id="preview">
-            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.6em .6em"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_FLAC_IMPLEMENTATION</span>
+            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .1em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#define DR_FLAC_IMPLEMENTATION</span>
 <span style="color: #BC7A00">#include &quot;dr_flac.h&quot;</span>
 
 <span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
@@ -111,8 +111,8 @@
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
 
-    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)pFlac<span style="color: #666666">-&gt;</span>totalSampleCount <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
-    drflac_read_s32(pFlac, pFlac<span style="color: #666666">-&gt;</span>totalSampleCount, pSampleData);
+    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)pFlac<span style="color: #666666">-&gt;</span>totalPCMFrameCount <span style="color: #666666">*</span> pFlac<span style="color: #666666">-&gt;</span>channels <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
+    drflac_read_pcm_frames_s32(pFlac, pFlac<span style="color: #666666">-&gt;</span>totalPCMFrameCount, pSampleData);
 
     <span style="color: #408080; font-style: italic">// At this point pSampleData contains every decoded sample as signed 32-bit PCM.</span>
 
