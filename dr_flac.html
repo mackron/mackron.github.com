@@ -106,7 +106,7 @@
 
 <span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
 {
-    drflac<span style="color: #666666">*</span> pFlac <span style="color: #666666">=</span> drflac_open_file(<span style="color: #BA2121">&quot;my_song.flac&quot;</span>);
+    drflac<span style="color: #666666">*</span> pFlac <span style="color: #666666">=</span> drflac_open_file(<span style="color: #BA2121">&quot;my_song.flac&quot;</span>, <span style="color: #008000">NULL</span>);
     <span style="color: #008000; font-weight: bold">if</span> (pFlac <span style="color: #666666">==</span> <span style="color: #008000">NULL</span>) {
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
