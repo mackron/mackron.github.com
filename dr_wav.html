@@ -124,8 +124,8 @@
         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1</span>;
     }
 
-    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)pWav<span style="color: #666666">-&gt;</span>totalPCMFrameCount <span style="color: #666666">*</span> pWav<span style="color: #666666">-&gt;</span>channels <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
-    drwav_read_pcm_frames_s32(pWav, pWav<span style="color: #666666">-&gt;</span>totalPCMFrameCount, pSampleData);
+    <span style="color: #B00040">int32_t</span><span style="color: #666666">*</span> pSampleData <span style="color: #666666">=</span> (<span style="color: #B00040">int32_t</span><span style="color: #666666">*</span>)malloc((<span style="color: #B00040">size_t</span>)wav<span style="color: #666666">.</span>totalPCMFrameCount <span style="color: #666666">*</span> wav<span style="color: #666666">.</span>channels <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">int32_t</span>));
+    drwav_read_pcm_frames_s32(&wav, wav<span style="color: #666666">.</span>totalPCMFrameCount, pSampleData);
 
     <span style="color: #408080; font-style: italic">// At this point pSampleData contains every decoded sample as signed 32-bit PCM.</span>
 
